@@ -1,0 +1,28 @@
+function MINIMAX(node, depth, isMaximizingPlayer):
+    if node is a terminal node or depth is 0:
+        return the heuristic value of node
+
+    if isMaximizingPlayer:
+        bestValue = -∞
+        for each child of node:
+            value = MINIMAX(child, depth - 1, false)
+            bestValue = max(bestValue, value)
+        return bestValue
+    else:
+        bestValue = +∞
+        for each child of node:
+            value = MINIMAX(child, depth - 1, true)
+            bestValue = min(bestValue, value)
+        return bestValue
+
+function findBestMove(board):
+    bestMove = null
+    bestValue = -∞
+    for each move in possibleMoves(board):
+        make the move on the board
+        moveValue = MINIMAX(board, depth, false)
+        undo the move
+        if moveValue > bestValue:
+            bestValue = moveValue
+            bestMove = move
+    return bestMove
