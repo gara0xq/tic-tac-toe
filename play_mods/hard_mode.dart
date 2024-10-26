@@ -40,7 +40,7 @@ final checking = Checking(ai: ai, player: player, roundNumber: roundNumber);
 final validate = InputValidation();
 final random = GetMove();
 
-int AiMove(board) => random.getPlayWithRatio(bestMove(board), 5, possibleMoves(board));
+int AiMove(board) => random.getPlayWithRatio(bestMove(board), 7, possibleMoves(board));
 
 int play(board) => validate.InputValidNumber(possibleMoves(board));
 
